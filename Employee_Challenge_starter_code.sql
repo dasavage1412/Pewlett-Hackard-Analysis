@@ -31,10 +31,11 @@ e.birth_date,
 ti.title,
 de.from_date,
 de.to_date
-
 --INTO mentorship_eligibilty
 FROM employees as e
+inner join dept_emp as de
+on (e.emp_no = de.emp_no)
 inner join titles as ti
 on (e.emp_no = ti.emp_no)
-WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
-ORDER BY e.emp_no, ti.from_date DESC;
+WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+ORDER BY e.emp_no, e.emp_no DESC;
